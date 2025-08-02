@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PILIBHIT SUNRISE SUNSET</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Bebas+Neue&family=Poppins:wght@400;700&family=Dancing+Script&family=Cinzel&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      * {
+        text-transform: uppercase;
+      }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+
+        body {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+      }
+      .font-bebas {
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .font-dancing {
+        font-family: "Dancing Script", cursive;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 p-8 font-sans text-[18px] md:text-[20px]">
+    <div class="max-w-6xl mx-auto">
+      <!-- Title -->
+      <h1 class="text-[32px] font-bold text-center mb-10 font-bebas text-3xl text-blue-700 uppercase tracking-widest">PRAYER TIME <br />PILIBHIT, UTTAR PRADESH</h1>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-400 text-center text-[18px] md:text-[20px]">
+          <thead class="bg-gray-200 text-[20px]">
+            <tr>
+              <th class="border border-gray-300 px-4 py-3">MONTH</th>
+              <th class="border border-gray-300 px-4 py-3">🌅 MORNING</th>
+              <th class="border border-gray-300 px-4 py-3">🌇 EVENING</th>
+            </tr>
+          </thead>
+          <tbody id="month-table">
+            <tr>
+              <td class="border px-4 py-3">JANUARY</td>
+              <td class="border px-4 py-3">06:56 AM</td>
+              <td class="border px-4 py-3">05:34 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">FEBRUARY</td>
+              <td class="border px-4 py-3">06:42 AM</td>
+              <td class="border px-4 py-3">05:56 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">MARCH</td>
+              <td class="border px-4 py-3">06:13 AM</td>
+              <td class="border px-4 py-3">06:14 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">APRIL</td>
+              <td class="border px-4 py-3">05:40 AM</td>
+              <td class="border px-4 py-3">06:31 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">MAY</td>
+              <td class="border px-4 py-3">05:16 AM</td>
+              <td class="border px-4 py-3">06:48 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">JUNE</td>
+              <td class="border px-4 py-3">05:10 AM</td>
+              <td class="border px-4 py-3">07:02 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">JULY</td>
+              <td class="border px-4 py-3">05:21 AM</td>
+              <td class="border px-4 py-3">07:02 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">AUGUST</td>
+              <td class="border px-4 py-3">05:37 AM</td>
+              <td class="border px-4 py-3">06:42 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">SEPTEMBER</td>
+              <td class="border px-4 py-3">05:51 AM</td>
+              <td class="border px-4 py-3">06:10 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">OCTOBER</td>
+              <td class="border px-4 py-3">06:07 AM</td>
+              <td class="border px-4 py-3">05:36 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">NOVEMBER</td>
+              <td class="border px-4 py-3">06:28 AM</td>
+              <td class="border px-4 py-3">05:14 PM</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-3">DECEMBER</td>
+              <td class="border px-4 py-3">06:49 AM</td>
+              <td class="border px-4 py-3">05:14 PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br />
+    <!-- Print Button -->
+    <div class="flex justify-center mb-6 no-print capitalize">
+      <button onclick="window.print()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-lg hover:bg-blue-700 transition">🖨️ PRINT PAGE</button>
+    </div>
+    <div><p class="capitalize font-semibold font-dancing text-red-500 ml-40 no-print">Design By Deep</p></div>
+    <!-- Highlight current month on screen only -->
+    <script>
+      const monthIndex = new Date().getMonth(); // 0 = January
+      const rows = document.querySelectorAll("#month-table tr");
+      if (rows[monthIndex]) {
+        rows[monthIndex].classList.add(
+          "bg-blue-100", // highlight for screen
+          "text-blue-900",
+          "font-semibold",
+          "print:bg-transparent", // remove highlight for print
+          "print:text-black",
+          "print:font-normal"
+        );
+      }
+    </script>
+  </body>
+</html>
